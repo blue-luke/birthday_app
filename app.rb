@@ -2,5 +2,5 @@ require 'sinatra'
 require 'sinatra/reloader'
 
 get '/' do
-  "Hi thereW"
+  "Hi there"
 end
