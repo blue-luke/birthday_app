@@ -9,7 +9,8 @@ class BirthdayApp < Sinatra::Base
 
   post '/birthday_wishes' do
     name = params[:name]
-    "Happy Birthday #{name}!"
+
+    "Your birthday will be in 1 day, #{name}!"
   end
 
 end
