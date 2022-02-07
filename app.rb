@@ -4,7 +4,7 @@ require 'sinatra/reloader'
 class BirthdayApp < Sinatra::Base
 
   get '/' do
-    "Hello there!"
+    erb :index
   end
 
 end
