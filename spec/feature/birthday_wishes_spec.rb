@@ -20,4 +20,12 @@ feature 'birthday wishes' do
     click_button("Provide details")
     expect(page).to have_content 'Your birthday will be in 1 day, Jane'
   end
+  scenario 'wishes specific user happy birthday' do
+    visit '/'
+    fill_in('Name', with: 'John')
+    fill_in('Day', with: '10')
+    select "February", :from => "month-names"
+    click_button("Provide details")
+    expect(page).to have_content 'Your birthday will be in 2 days, John'
+  end
 end
