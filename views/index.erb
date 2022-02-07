@@ -1,8 +1,25 @@
-"Hello there!"
-
-"Enter your name"
+Hello there!
+<br> </br>
 
 <form action="/birthday_wishes" method="post">
-  <input type="text" id="Name" name="name"><br>
+  Enter your name: <input type="text" id="Name" name="name"><br>
+  <br> </br>
+  Enter your birth day: <input type="text" id="Day" name="day"><br>
+  <br> </br>
+  Enter your birth month: <select name="month-names" id="Month">
+  <option value='1'>January</option>
+  <option value='2'>February</option>
+  <option value='3'>March</option>
+  <option value='4'>April</option>
+  <option value='5'>May</option>
+  <option value='6'>June</option>
+  <option value='7'>July</option>
+  <option value='8'>August</option>
+  <option value='9'>September</option>
+  <option value='10'>October</option>
+  <option value='11'>November</option>
+  <option value='12'>December</option>
+</select>
+<br> </br>
   <input type="submit" id='Provide details'>
 </form>
