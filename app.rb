@@ -7,8 +7,9 @@ class BirthdayApp < Sinatra::Base
     erb :index
   end
 
-  get '/birthday_wishes' do
-    "Happy Birthday!"
+  post '/birthday_wishes' do
+    name = params[:name]
+    "Happy Birthday #{name}!"
   end
 
 end
