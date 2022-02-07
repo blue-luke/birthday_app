@@ -1,6 +1,10 @@
 require 'sinatra'
 require 'sinatra/reloader'
 
-get '/' do
-  "Hi there"
+class BirthdayApp < Sinatra::Base
+
+  get '/' do
+    "Hello there!"
+  end
+
 end
