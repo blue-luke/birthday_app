@@ -1,10 +1,18 @@
 require 'date'
 
 class Birthday
+  attr_reader :closest_birthday, :next_birthday
   def initialize(name, day, month)
     @name = name
     @day = day
     @month = month
+    @year = Date.today.year
+    @closest_birthday = Date.parse("#{@day}/#{@month}/#{@year}")
+    if Date.today < @closest_birthday
+      @next_birthday = @closest_birthday
+    else
+      @next_birthday = Date.parse("#{@day}/#{@month}/#{@year + 1}")
+    end
   end
 
   def current_day
@@ -21,13 +29,14 @@ class Birthday
   end
 
   def birthday_today?
-    @day == current_day && @month == current_month
+    @closest_birthday == Date.today
+    # @day == current_day && @month == current_month
   end
 
   def message
     if birthday_today?
       "Happy Birthday, #{@name}!"
-    else
+    elsif !birthday_today?
       days_away = @day - current_day
       "Your birthday is in #{days_away} days, #{@name}"
     end
