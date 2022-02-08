@@ -1,13 +1,34 @@
+require 'date'
+
 class Birthday
   def initialize(name, day, month)
     @name = name
     @day = day
     @month = month
   end
+
   def current_day
-    Time.now.strftime("%d")[1].to_i
+    day = Time.now.strftime("%d")
+    if day[0] = "0"
+      day[1].to_i
+    else
+      day.to_i
+    end
   end
+
+  def current_month
+    month = Date.today.strftime("%B")
+  end
+
+  def birthday_today?
+    @day == current_day && @month == current_month
+  end
+
   def message
-    "Happy Birthday, Alice!"
+    if birthday_today?
+      "Happy Birthday, #{@name}!"
+    else
+      "Your birthday is in x days, #{@name}"
+    end
   end
 end
