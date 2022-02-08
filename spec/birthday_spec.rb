@@ -10,4 +10,9 @@ describe 'Birthday' do
     allow(Date).to receive_message_chain(:today, :strftime).with("%B").and_return("February")
     expect(b.current_month).to eq "February"
   end
+  it 'tells you current day' do
+    b = Birthday.new("Jane", 9, "February")
+    allow(Time).to receive_message_chain(:now, :strftime).with("%d").and_return("09")
+    expect(b.current_day).to eq 9
+  end
 end
