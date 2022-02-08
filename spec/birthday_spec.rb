@@ -29,4 +29,10 @@ describe 'Birthday' do
     allow(Time).to receive_message_chain(:now, :strftime).with("%d").and_return("08")
     expect(b.message).to eq "Your birthday is in 2 days, Jane"
   end
+  # it 'tells you if your birthday is 31 days away, across a month' do
+  #   b = Birthday.new("Jane", 10, "April")
+  #   allow(Date).to receive_message_chain(:today, :strftime).with("%B").and_return("March")
+  #   allow(Time).to receive_message_chain(:now, :strftime).with("%d").and_return("10")
+  #   expect(b.message).to eq "Your birthday is in 31 days, Jane"
+  # end
 end
