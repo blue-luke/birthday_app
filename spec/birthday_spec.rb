@@ -3,6 +3,8 @@ require 'birthday'
 describe 'Birthday' do
   it 'tells you if your birthday is today' do
     b = Birthday.new("Alice", 8, "February")
+    allow(Date).to receive_message_chain(:today, :strftime).with("%B").and_return("February")
+    allow(Time).to receive_message_chain(:now, :strftime).with("%d").and_return("08")
     expect(b.message).to eq "Happy Birthday, Alice!"
   end
   it 'tells you current month' do
