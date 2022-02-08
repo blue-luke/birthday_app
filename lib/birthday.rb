@@ -28,7 +28,7 @@ class Birthday
     if birthday_today?
       "Happy Birthday, #{@name}!"
     else
-      "Your birthday is in x days, #{@name}"
+      "Your birthday is in 1 days, #{@name}"
     end
   end
 end
